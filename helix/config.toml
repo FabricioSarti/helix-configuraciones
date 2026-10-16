@@ -1,0 +1,9 @@
+theme = "onedark"
+
+[editor]
+clipboard-provider = "windows"
+
+[keys.normal.space]
+Y = ":sh echo %{buffer_name} | clip"
+l = ":lsp-restart"
+o = ":open %sh{type C:\\Users\\username\\Documents\\helix-commands\\.last-new}"

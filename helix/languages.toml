@@ -1,0 +1,67 @@
+[language-server.jdtls]
+command = "C:\\Users\\username\\Documents\\dev-tools\\jdtls.bat"
+
+[language-server.jdtls.config]
+java.import.maven.enabled = true
+java.configuration.updateBuildConfiguration = "automatic"
+java.progressReports.enabled = true
+java.maven.downloadSources = true
+java.configuration.maven.globalSettings = "C:\\Users\\username\\Documents\\dev-tools\\maven\\conf\\settings.xml"
+java.configuration.maven.userSettings = "C:\\Users\\username\\Documents\\dev-tools\\maven\\conf\\settings.xml"
+java.format.settings.url = "C:\\Users\\username\\Documents\\dev-tools\\ecplise-xml\\eclipse-formatter.xml"
+java.format.settings.profile = "MiEstilo"
+
+[[language-server.jdtls.config.java.configuration.runtimes]]
+name = "JavaSE-1.8"
+path = "C:\\Users\\username\\Documents\\dev-tools\\jdk8"
+default = true
+
+[[language]]
+name = "java"
+language-servers = ["jdtls"]
+roots = ["pom.xml", "build.gradle", ".git", "mvnw"]
+
+[language-server.typescript-language-server]
+command = "C:\\Users\\username\\Documents\\dev-tools\\tsls.bat"
+
+[language-server.angular]
+command = "C:\\Users\\username\\Documents\\dev-tools\\ngserver.bat"
+
+[[language]]
+name = "typescript"
+roots = ["angular.json", "package.json", "tsconfig.json", ".git"]
+language-servers = ["typescript-language-server", "angular"]
+formatter = { command = "C:\\Users\\username\\Documents\\dev-tools\\prettier.bat", args = ["--parser", "typescript"] }
+
+[[language]]
+name = "html"
+roots = ["angular.json", "package.json", "tsconfig.json", ".git"]
+language-servers = ["angular"]
+formatter = { command = "C:\\Users\\username\\Documents\\dev-tools\\prettier.bat", args = ["--parser", "angular"] }
+
+[[language]]
+name = "css"
+scope = "source.css"
+file-types = ["css"]
+comment-token = "/*"
+roots = ["angular.json", "package.json", ".git"]
+formatter = { command = "C:\\Users\\username\\Documents\\dev-tools\\prettier.bat", args = ["--parser", "css"] }
+auto-format = true
+
+[[language]]
+name = "scss"
+scope = "source.scss"
+file-types = ["scss"]
+comment-token = "//"
+roots = ["angular.json", "package.json", ".git"]
+formatter = { command = "C:\\Users\\username\\Documents\\dev-tools\\prettier.bat", args = ["--parser", "scss"] }
+auto-format = true
+
+[[language]]
+name = "sass"
+scope = "source.sass"
+file-types = ["sass"]
+comment-token = "//"
+roots = ["angular.json", "package.json", ".git"]
+formatter = { command = "C:\\Users\\username\\Documents\\dev-tools\\prettier.bat", args = ["--parser", "scss"] }
+auto-format = true
